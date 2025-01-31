@@ -123,6 +123,5 @@ def main():
             sys.exit()
 
 
-# Ejecutar el juego
 if __name__ == "__main__":
     main()
