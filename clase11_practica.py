@@ -65,6 +65,7 @@
 
 import sys
 import random
+import getpass
 
 print("🎮 ¡Vamos a jugar piedra, papel o tijera! 🎮")
 
@@ -73,9 +74,10 @@ RETRY_OPTIONS = ["si", "no"]
 MODE_OPTIONS = ["jugador", "cpu"]
 
 
-def get_valid_input(prompt, valid_options):
+def get_valid_input(prompt, valid_options, hidden=False):
     while True:
-        choice = input(prompt).strip().lower()
+        choice = getpass.getpass(prompt) if hidden else input(prompt)
+        choice = choice.strip().lower()
         if choice in valid_options:
             return choice
         print("❌ Opción inválida. Inténtalo de nuevo.")
@@ -98,11 +100,17 @@ def play_round():
         MODE_OPTIONS,
     )
 
-    player1 = get_valid_input("👤 Jugador 1, elige piedra, papel o tijera: ", OPTIONS)
+    player1 = get_valid_input(
+        "👤 Jugador 1, elige piedra, papel o tijera: ",
+        OPTIONS,
+        hidden=(mode == "jugador"),
+    )
 
     if mode == "jugador":
         player2 = get_valid_input(
-            "👤 Jugador 2, elige piedra, papel o tijera: ", OPTIONS
+            "👤 Jugador 2, elige piedra, papel o tijera: ",
+            OPTIONS,
+            hidden=(mode == "jugador"),
         )
         print(f"\n🎲 Jugador 1 eligió: {player1}")
         print(f"🎲 Jugador 2 eligió: {player2}\n")
