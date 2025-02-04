@@ -15,11 +15,12 @@ with open(file_path, mode="r") as file:
     csv_reader = csv.DictReader(file)
     # Obtener los nombres de las columnas existentes
     fieldnames = csv_reader.fieldnames + ["total_value"]
-
+    print(fieldnames)
     with open(updated_file_path, mode="w", newline="") as updated_file:
         csv_writer = csv.DictWriter(updated_file, fieldnames=fieldnames)
         csv_writer.writeheader()
 
         for row in csv_reader:
+            print(row)
             row["total_value"] = int(row["price"]) * int(row["quantity"])
             csv_writer.writerow(row)
