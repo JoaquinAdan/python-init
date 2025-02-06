@@ -1,6 +1,4 @@
 def print_info(**kwargs):
-    print(kwargs)
-    print(kwargs.items())
     for key, value in kwargs.items():
         print(f"{key}: {value}")
 
