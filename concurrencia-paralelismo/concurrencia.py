@@ -34,7 +34,7 @@ print("Todas las solicitudes han sido procesadas")
 # |_______________________|_______________________|_______________________|
 # |                       |   Operaciones I/O     |  Tareas que requieran |
 # |      Usos ideales     |    (Espera de red,    |   mucho cálculo       |
-# |                       | Escritura de archivos)|                       |
+# |                       | Escritura de archivos)| o tiempo de ejecución |
 # |_______________________|_______________________|_______________________|
 # |                       |                       |                       |
 # |     Implementación    |  threading, asyncio   |    multiprocessing    |
