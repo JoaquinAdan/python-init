@@ -25,7 +25,7 @@ if __name__ == "__main__":
 # |_______________________|_______________________|_______________________|
 # |                       |   Operaciones I/O     |  Tareas que requieran |
 # |      Usos ideales     |    (Espera de red,    |   mucho cálculo       |
-# |                       | Escritura de archivos)|                       |
+# |                       | Escritura de archivos)| o tiempo de ejecución |
 # |_______________________|_______________________|_______________________|
 # |                       |                       |                       |
 # |     Implementación    |  threading, asyncio   |    multiprocessing    |
